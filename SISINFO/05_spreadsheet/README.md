@@ -1,3 +1,3 @@
 # 05 - Spreadsheet
 
-`export_xlsx.py` saves the same data as `output/sysinfo_<computernaam>.xlsx` with `openpyxl`. The header row is bold and frozen, and the column widths are adjusted to the content.
+`export_xlsx.py` bewaart dezelfde gegevens als `output/sysinfo_<computernaam>.xlsx` met `openpyxl`. De koprij is vet en vastgezet, de kolombreedtes passen zich aan de inhoud aan.

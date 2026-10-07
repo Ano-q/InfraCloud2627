@@ -1,8 +1,8 @@
 # SISINFO - System Information Scripting
 
-Collects hardware and network info from a computer, exports it to JSON, CSV and XLSX,
-merges the files of the whole team and validates the result.
+Leest hardware- en netwerkinformatie van een computer uit, exporteert die naar JSON, CSV en XLSX,
+voegt de bestanden van het hele team samen en valideert het resultaat.
 
-- Requires: `pip install psutil openpyxl`
-- Run the tasks in order (01 to 07). Scripts can be started from any directory.
-- All generated files go to `output/` (ignored by Git: it contains serial numbers and MAC addresses).
+- Vereist: `pip install psutil openpyxl`
+- Voer de taken in volgorde uit (01 tot 07). De scripts werken vanuit elke map.
+- Alle gegenereerde bestanden komen in `output/` (genegeerd door Git: bevat serienummers en MAC-adressen).

@@ -1,3 +1,3 @@
 # 06 - Samenvoegen
 
-`merge_team_csv.py` reads every `sysinfo_*.csv` in `output/team_csv/` and writes them to `output/team_sysinfo.csv`. It reports missing columns. Duplicates are matched by serial number, or by computer name if there is none. To add a team member, put their CSV in `output/team_csv/` and run the script again.
+`merge_team_csv.py` leest alle `sysinfo_*.csv` in `output/team_csv/` en schrijft ze samen naar `output/team_sysinfo.csv`. Ontbrekende kolommen worden gemeld. Dubbels worden herkend op serienummer, of op computernaam als er geen serienummer is. Een groepslid toevoegen: zet zijn CSV in `output/team_csv/` en voer het script opnieuw uit.

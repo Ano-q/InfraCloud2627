@@ -1,6 +1,6 @@
 # 01 - Basisscript
 
-| Script | Purpose |
+| Script | Doel |
 |---|---|
-| `collect_sysinfo.py` | Teacher's base script. Reads CPU, memory, storage and network info with `psutil` and prints it as JSON. |
-| `show_structure.py` | Prints the keys of each level of the collected dict, to see where each value is stored. |
+| `collect_sysinfo.py` | Basisscript van de docent. Leest CPU, geheugen, opslag en netwerk uit met `psutil` en toont alles als JSON. |
+| `show_structure.py` | Toont de sleutels van elke laag van de dict, om te zien waar elk gegeven zit. |

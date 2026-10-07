@@ -1,7 +1,7 @@
 # 02 - Filteren
 
-| Script | Purpose |
+| Script | Doel |
 |---|---|
-| `system_details.py` | Adds computer model, readable CPU name and serial number (via PowerShell, `/sys` or `sysctl`, depending on the OS). |
-| `primary_interface.py` | Finds the interface used for internet traffic. Fallback: the active interface with a usable IPv4 address and the most received traffic. |
-| `filter_sysinfo.py` | Reduces everything to one flat row of 13 columns (`KOLOMMEN`). Uses the system partition, sizes in GB, and MAC addresses in uppercase with colons. |
+| `system_details.py` | Voegt computermodel, leesbare processornaam en serienummer toe (via PowerShell, `/sys` of `sysctl`, afhankelijk van het besturingssysteem). |
+| `primary_interface.py` | Zoekt de interface waarlangs het internetverkeer loopt. Reserve: de actieve interface met een bruikbaar IPv4-adres en het meeste ontvangen verkeer. |
+| `filter_sysinfo.py` | Herleidt alles tot één platte rij van 13 kolommen (`KOLOMMEN`). Gebruikt de systeempartitie, groottes in GB en MAC-adressen in hoofdletters met dubbele punten. |

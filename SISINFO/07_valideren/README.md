@@ -1,3 +1,3 @@
 # 07 - Valideren
 
-`validate_team_csv.py` checks the team file. It looks for missing required fields, the MAC format, valid IPv4/IPv6 and link-local addresses, plausible numbers, and duplicate names or serial numbers. It also compares your own row with a new measurement.
+`validate_team_csv.py` controleert het teambestand op lege verplichte velden, de vorm van het MAC-adres, geldige IPv4-, IPv6- en link-local adressen, plausibele getallen en dubbele namen of serienummers. Daarna vergelijkt het je eigen rij met een nieuwe meting.
