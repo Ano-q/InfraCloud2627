@@ -1,0 +1,33 @@
+---
+- name: Collect selected facts from IOS XE device
+  hosts: routers
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Get hardware and interfaces only
+      ios_facts:
+        gather_subset:
+          - hardware
+          - interfaces
+      register: ios_facts
+
+    - name: Show hostname
+      debug:
+        var: ios_facts.ansible_facts.ansible_net_hostname
+
+    - name: Show serial number
+      debug:
+        var: ios_facts.ansible_facts.ansible_net_serialnum
+
+    - name: Create output folder
+      file:
+        path: "{{ playbook_dir }}/../output"
+        state: directory
+      delegate_to: localhost
+
+    - name: Save facts to file
+      copy:
+        content: "{{ ios_facts | to_nice_json }}"
+        dest: "{{ playbook_dir }}/../output/{{ inventory_hostname }}-facts.json"
+      delegate_to: localhost

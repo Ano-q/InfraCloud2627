@@ -1,0 +1,21 @@
+---
+# Ansible 2.9 heeft geen ansible.utils.fact_diff; ios_config met diff_against doet hetzelfde.
+# Uitvoeren met --check --diff zodat er niets op de router verandert.
+- name: Compare current configuration with baseline
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  vars:
+    intended_config_path: "{{ playbook_dir }}/../output/baselines/{{ inventory_hostname }}-baseline.conf"
+
+  tasks:
+    - name: Compare running-config with baseline
+      ios_config:
+        diff_against: intended
+        intended_config: "{{ lookup('file', intended_config_path) }}"
+        diff_ignore_lines:
+          - "^Building configuration.*"
+          - "^Current configuration.*"
+          - "^!!.*"
+          - "^ntp clock-period.*"

@@ -1,0 +1,24 @@
+---
+- name: Save current running-config as baseline
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Get running-config
+      ios_command:
+        commands:
+          - show running-config
+      register: running
+
+    - name: Create baselines folder
+      file:
+        path: "{{ playbook_dir }}/../output/baselines"
+        state: directory
+      delegate_to: localhost
+
+    - name: Save baseline
+      copy:
+        content: "{{ running.stdout[0] }}\n"
+        dest: "{{ playbook_dir }}/../output/baselines/{{ inventory_hostname }}-baseline.conf"
+      delegate_to: localhost

@@ -1,0 +1,27 @@
+---
+- name: Configure loopback interface
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Add loopback interface
+      ios_config:
+        lines:
+          - ip address 10.110.0.2 255.255.255.0
+        parents: interface Loopback110
+      register: result
+
+    - name: Display result
+      debug:
+        var: result
+
+    - name: Verify loopback interfaces
+      ios_command:
+        commands:
+          - show ip interface brief | include Loopback
+      register: verify
+
+    - name: Display verification
+      debug:
+        var: verify.stdout_lines
