@@ -9,7 +9,7 @@ password = os.environ.get("ROUTER_PASS") or getpass("Router password: ")
 
 device = {
     "device_type": "cisco_ios",
-    "host": "192.168.56.101",
+    "host": os.environ.get("ROUTER_HOST", "192.168.56.101"),  # CSR standaard, CML R1 via ROUTER_HOST
     "username": "cisco",
     "password": password,
     "secret": password,

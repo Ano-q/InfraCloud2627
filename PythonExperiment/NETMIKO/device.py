@@ -4,7 +4,7 @@ import os
 from getpass import getpass
 
 v_device_type = "cisco_ios"
-v_host = "192.168.56.101"
+v_host = os.environ.get("ROUTER_HOST", "192.168.56.101")  # CSR standaard, CML R1 via ROUTER_HOST
 v_ssh_port = 22
 v_username = "cisco"
 # wachtwoord niet in de code: export ROUTER_PASS=... of het script vraagt erom
